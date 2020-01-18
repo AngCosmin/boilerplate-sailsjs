@@ -1,26 +1,28 @@
-# test
+# [![Sails.js logo](http://balderdashy.github.io/sails/images/logo.png "Sails.js")](http://sailsjs.com)
 
-a [Sails v1](https://sailsjs.com) application
+# Boilerplate Sails.js
 
-
-### Links
-
-+ [Sails framework documentation](https://sailsjs.com/get-started)
-+ [Version notes / upgrading](https://sailsjs.com/documentation/upgrading)
-+ [Deployment tips](https://sailsjs.com/documentation/concepts/deployment)
-+ [Community support options](https://sailsjs.com/support)
-+ [Professional / enterprise options](https://sailsjs.com/enterprise)
+A [Sails](https://sailsjs.com) boilerplate application
 
 
-### Version info
+### Features
 
-This app was originally generated on Tue Jan 07 2020 13:12:36 GMT+0200 (Eastern European Standard Time) using Sails v1.2.3.
++ JWT Authentication (Bearer)
++ Password encryption (bcrypt)
++ Authentication middleware
 
-<!-- Internally, Sails used [`sails-generate@1.16.13`](https://github.com/balderdashy/sails-generate/tree/v1.16.13/lib/core-generators/new). -->
+### Setup
 
+**Intall everything:**
+```sh
+npm install
+```
 
+**Lift sails:**
+```sh
+# cd into the app folder
+cd boilerplate-sailsjs
 
-<!--
-Note:  Generators are usually run using the globally-installed `sails` CLI (command-line interface).  This CLI version is _environment-specific_ rather than app-specific, thus over time, as a project's dependencies are upgraded or the project is worked on by different developers on different computers using different versions of Node.js, the Sails dependency in its package.json file may differ from the globally-installed Sails CLI release it was originally generated with.  (Be sure to always check out the relevant [upgrading guides](https://sailsjs.com/upgrading) before upgrading the version of Sails used by your app.  If you're stuck, [get help here](https://sailsjs.com/support).)
--->
-
+# fire up the server
+sails lift
+```
