@@ -31,7 +31,7 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/AngCosmin/colegu-backend"
+    "url": "git@github.com:AngCosmin/boilerplate-sailsjs.git"
   },
   "author": "PA",
   "license": "",
