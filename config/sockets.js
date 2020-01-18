@@ -42,13 +42,31 @@ module.exports.sockets = {
   *                                                                          *
   ***************************************************************************/
 
-  // beforeConnect: function(handshake, proceed) {
-  
-  //   // `true` allows the socket to connect.
-  //   // (`false` would reject the connection)
-  //   return proceed(undefined, true);
-  
-  // },
+  beforeConnect: async function(handshake, proceed) {
+    let token = handshake.headers.token
+
+    if (!token) {
+      return proceed(undefined, false);
+    }
+
+    try {
+      var decoded = jwt.verify(token, process.env.APP_KEY)
+    } catch(err) {
+      return proceed(undefined, false);
+    }
+
+    if (!decoded.id) {
+      return proceed(undefined, false);
+    }
+
+    var user = await User.findOne(decoded.id)
+    if (!user) {
+      return proceed(undefined, false);
+    }
+    
+    console.log('User connected')
+    return proceed(undefined, true);
+  },
 
   // onlyAllowOrigins: ['http://localhost', 'http://10.1.10.224', 'http://127.0.0.1']
 
@@ -62,9 +80,14 @@ module.exports.sockets = {
   *                                                                          *
   ***************************************************************************/
 
-  afterDisconnect: function(session, socket, done) {
+  afterDisconnect: async function(session, socket, done) {
   
     console.log("User disconnected")
+
+    // console.log("SESSION", session)
+    // console.log("SOCKET", socket)
+
+    await User.updateOne({ socket_id: socket.id }).set({ socket_id: null })
 
     // By default: do nothing.
     // (but always trigger the callback)

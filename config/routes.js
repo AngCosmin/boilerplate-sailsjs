@@ -22,6 +22,7 @@ module.exports.routes = {
   '/': { view: 'pages/homepage' },
   'POST /login' : { action: 'auth/login' },
   'POST /register' : { action: 'auth/register' },
+  'PUT /socket' : { action: 'user/update-socket' },
 
   /***************************************************************************
   *                                                                          *

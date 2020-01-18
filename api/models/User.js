@@ -14,6 +14,7 @@ module.exports = {
     name: { type: 'string', required: true },
     email: { type: 'string', required: true },
     password: { type: 'string', required: true },
+    socket_id: { type: 'string', required: false, allowNull: true },
 
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
