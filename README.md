@@ -13,16 +13,20 @@ A [Sails](https://sailsjs.com) boilerplate application
 
 ### Setup
 
-**Intall everything:**
+## Intall everything
 ```sh
 npm install
 ```
 
-**Lift sails:**
+## Setup env
 ```sh
-# cd into the app folder
-cd boilerplate-sailsjs
+cp .env.example .env
+```
 
+Update `DATABASE_URL` with your details
+
+## Lift sails
+```
 # fire up the server
 sails lift
 ```
