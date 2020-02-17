@@ -11,18 +11,28 @@ A [Sails](https://sailsjs.com) boilerplate application
 + Password encryption (bcrypt)
 + Authentication middleware
 
-### Setup
+On branch `websockets`
++ Socket Authentication
 
-**Intall everything:**
+## Setup
+
+### Intall everything
 ```sh
 npm install
 ```
 
-**Lift sails:**
+### Setup env
 ```sh
-# cd into the app folder
-cd boilerplate-sailsjs
+cp .env.example .env
+```
 
+Update `DATABASE_URL` with your details
+
+### Lift sails
+```
 # fire up the server
 sails lift
 ```
+
+**When using branch `websockets`:**  
+After you are connected, make a `PUT` request to `/socket` to update the `socket_id` of the user in database
