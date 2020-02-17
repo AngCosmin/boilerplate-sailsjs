@@ -14,21 +14,21 @@ A [Sails](https://sailsjs.com) boilerplate application
 On branch `websockets`
 + Socket Authentication
 
-### Setup
+## Setup
 
-## Intall everything
+### Intall everything
 ```sh
 npm install
 ```
 
-## Setup env
+### Setup env
 ```sh
 cp .env.example .env
 ```
 
 Update `DATABASE_URL` with your details
 
-## Lift sails
+### Lift sails
 ```
 # fire up the server
 sails lift
